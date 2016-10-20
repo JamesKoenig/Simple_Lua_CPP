@@ -20,7 +20,6 @@ int main(int argc, char ** argv) {
 	lua_State * lState = luaL_newstate();
 	luaL_openlibs(lState);
 	luaL_newlib(lState, testLib);
-	lua_pushvalue(lState, -1);
 	lua_setglobal(lState,"test");
 
 	result = luaL_loadfile(lState, "hello.lua");
